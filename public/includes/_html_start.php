@@ -1,9 +1,15 @@
 <?php
     $protocol = (isset($_SERVER['HTTPS']) ? 'https' : 'http');
-//    $SCRIPT_ROOT = $protocol . '://' . $_SERVER['SERVER_NAME'] . '/';
-    $SCRIPT_ROOT = $protocol . '://' . $_SERVER['SERVER_NAME'] . '/project__eray/public/';
-
-
+    $localhost = array(
+        '127.0.0.1',
+        '::1'
+    );
+    //check if localhost
+    if(in_array($_SERVER['REMOTE_ADDR'], $localhost)){
+        $SCRIPT_ROOT = $protocol . '://' . $_SERVER['SERVER_NAME'] . '/project__eray/public/';
+    } else {
+         $SCRIPT_ROOT = $protocol . '://' . $_SERVER['SERVER_NAME'] . '/';
+    }
 ?>
 
 <!DOCTYPE html>
