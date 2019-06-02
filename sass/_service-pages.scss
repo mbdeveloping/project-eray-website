@@ -1,0 +1,112 @@
+&.service-page {
+
+    header {
+
+        ul {
+            &.languages:not(.languages-mobile) {
+                display: none;
+            }
+        }
+
+        .back-arrow {
+            display: block;
+        }
+    }
+
+    .page-content {
+
+        @media(min-width: $screen-md) {
+            display: flex;
+            height: 100%;
+            margin-bottom: -60px;
+        }
+
+        &__left, &__right {
+            
+            @media(min-width: $screen-md) {
+                width: 50%;
+            }
+        }
+
+        &__left {
+            display: flex;
+            flex-direction: column;
+            margin: 50px 0 0;
+
+            @media(min-width: $screen-md) {
+                margin: 50px 60px 60px 0;
+            }
+            
+            .dots--left {
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle at center,#c9c9cc 6%,transparent 8%),transparent;
+                background-size: 40px 40px;
+                background-position: 25px 32px;
+                margin-bottom: 60px;
+                min-height: 500px;
+
+                @media(min-width: $screen-md) {
+                    min-height: auto;
+                }
+            }
+
+            .legal {
+                font-size: 10px;
+                font-weight: 300;
+                margin-block-end: 40px;
+                display: none;
+
+                @media(min-width: $screen-md) {
+                    display: block;
+                }
+            }
+        }
+        &__right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: auto;
+
+            @media(min-width: $screen-md) {
+                margin: 50px 0 60px 60px;
+            }
+    
+
+            .service-content {
+                min-height: 300px;
+                flex: 1 0 auto;
+
+                @media(min-width: $screen-md) {
+                    padding-right: 30px;
+                }
+
+                h1 {
+                    font-size: 26px;
+                    color: $brand-orange;
+                    font-weight: 700;
+                    margin-bottom: 60px;
+                }
+    
+                p {
+                    color: #7a7a87;
+                    font-size: 20px;
+                    line-height: 2;
+                    margin-bottom: 60px;
+                }
+            }
+
+            .dots--right {
+                width: 100%;
+                height: 260px;
+                min-height: 260px;
+                background: radial-gradient(circle at center,#c9c9cc 6%,transparent 8%),transparent;
+                background-size: 40px 40px;
+                background-position: 25px 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,83 @@
+@import 'variables';
+@import 'bootstrap/index';
+
+// All styles are scoped to .eray-page
+
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  font-size: 1rem;
+  margin: 0;
+  background: $brand-bg;
+  color: $brand-dark-blue;
+  font-family: $body-normal;
+  line-height: 1.5;
+  padding: $page-padding-sm;
+
+  @media(min-width: $screen-md){
+    padding: $page-padding-lg;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  &.menu-active {
+    height: 100%; 
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .modal-backdrop {
+    background: white;
+  }
+
+  .cc-window.cc-banner {
+    justify-content: center;
+  }
+
+  .cc-banner .cc-message {
+    flex: initial;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.main {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  max-width: $page-max-width;
+  margin: 0 auto;
+  animation: slideIn 2s ease;
+
+  small {
+    font-size: 80% !important;
+  }
+
+  @import 'typography';
+  @import 'layout';
+
+  //Includes
+  @import 'elements/header';
+  @import 'homepage';
+  @import 'menu';
+  @import 'shapes';
+  @import 'service-pages';
+
+}
+
+@keyframes slideIn {
+	0% {
+        opacity: 0;
+	}
+	100% {
+        opacity: 1;
+	}
+}

@@ -1,0 +1,290 @@
+.menu {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    transform: translateX(-100%);
+    transition: transform .5s;
+    display: flex;
+    background: white;
+
+    &.active {
+        transform: translateX(0);
+
+        .menu__left {
+            animation: fadeIn .7s ease forwards;
+            animation-delay: .35s;
+        }
+
+        .menu__right {
+            animation: fadeIn .7s ease forwards;
+            animation-delay: .45s;
+
+            // .service-list {
+            //     li {
+            //         animation: slideIn 0.4s ease forwards;
+
+            //         @for $i from 1 through 7 {
+
+            //             &:nth-child(#{$i}) {
+            //                 animation-delay: .3s + ($i - 1.1) * 0.03s;
+            //             }
+            //         }
+            //     }
+            // }
+        }
+        
+    }
+
+    .content {
+
+        @media(min-width: $page-max-width) {
+            width: calc((#{$page-max-width} / 2) - (#{$page-padding-lg} * 2);
+        }
+
+        @media(min-width: $screen-xs) {
+            margin-top: 40px;
+        }
+        
+        @media(min-width: $screen-sm) {
+            margin-top: 70px;
+        }
+
+        &__header {
+            font-weight: 300;
+            font-size: 26px;
+            color: $brand-light-blue;
+
+            span.orange {
+                color: $brand-orange;
+            }
+
+            @media(min-width: $screen-xs) {
+                font-size: 36px;
+            }
+
+            @media(min-width: $screen-sm) {
+                font-size: 46px;
+            }
+        }
+    }
+
+    &__left, &__right {
+        width: 50%;
+        height: 100%;
+        padding: 60px;
+        opacity: 0;
+
+        @media(max-width: $screen-md) {
+            padding: 40px;
+        }
+    }
+
+    &__left {
+        background: white;
+        display: flex;
+        flex-direction: column;
+        // opacity: 0;
+
+        @media(max-width: $screen-md) {
+            width: 100%;
+        }
+
+        .languages-mobile {
+            height: 66px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+
+            @media(min-width: $page-max-width) {
+                margin-left: auto;
+            }
+
+            &__footer {
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            &__contacts {
+
+                h3 {
+                    font-size: 22px;
+                    color: $brand-orange;
+                    font-weight: 300;
+                    margin-bottom: 30px;
+                }
+
+                &--address {
+                    padding: 0;
+                    margin: 0 0 40px;
+                    list-style-type: none;
+                    max-width: 190px;
+
+
+                    li {
+                        font-size: 12px;
+                        padding: 5px 0;
+                        display: flex;
+
+                        &:last-child {
+                            padding-bottom: 0;
+                        }
+
+                        span {
+                            &:first-child {
+                                margin-right: 7px;
+                            }
+                        }
+                    }
+
+                }
+
+                .legal {
+                    font-size: 10px;
+                    font-weight: 300;
+                }
+            }
+
+            &__social {
+                position: relative;
+                width: 150px;
+
+                img {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 100%;
+
+                    @media(min-width: $screen-sm) {
+                        width: 300px;
+                    }
+                }
+
+                &--wrapper {
+                    display: flex;
+                    justify-content: flex-end;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+
+                    a {
+                        display: flex;
+                        align-items: flex-end;
+                        background: white;
+
+                        i {
+                            margin:0 5px;
+                            font-size: 24px;
+                            transition: color .3s;
+                        }
+
+                        &:last-child {
+                            i {
+                                margin-right: 0;
+                            }
+                
+                        }
+
+                        &:hover {
+                            i {
+                                color: $brand-orange;
+                            }
+                        }
+
+                    }
+                }
+            }
+    
+        }
+    }
+
+    &__right {
+        background: #fbfbff;
+        overflow: hidden;
+
+        @media(max-width: $screen-md) {
+            display: none;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin: 10px 0 0;
+            color: $brand-orange;
+        }
+
+        .content {
+            height: 100%;
+            overflow: auto;
+
+        }
+
+    }
+
+
+}
+
+.service-list {
+    list-style-type: none;
+    padding: 0 0 40px;
+    font-size: 22px;
+    line-height: 1.1;
+    margin-bottom: 45px;
+
+    @media(min-width: $screen-md) {
+        margin-bottom: 0;
+    }
+
+    li {
+        // opacity: 0;
+        padding: 40px 0;
+        will-change: transform, opacity;
+        // transform: translateX(-100px) translateZ(0);
+
+        @media(min-width: $screen-md) {
+            padding: 48px 0;
+        }
+
+        a {
+            transition: all .3s;
+        }
+
+        &:not(:last-child) {
+            border-bottom: 2px solid $brand-light-blue;
+        }
+
+        &:hover {
+            a {
+                color: $brand-orange;
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+// @keyframes slideIn {
+// 	0% {
+//         opacity: 0;
+//         transform: translateX(-100px) translateZ(0);
+// 	}
+// 	100% {
+//         opacity: 1;
+//         transform: translateX(0) translateZ(0);
+// 	}
+// }

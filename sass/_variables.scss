@@ -1,0 +1,49 @@
+// Fonts
+@font-face {
+    font-family: MarkPro;
+    src: url("../fonts/MarkPro.otf") format("opentype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: MarkPro;
+    src: url("../fonts/MarkPro-Light.otf") format("opentype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: MarkPro;
+    src: url("../fonts/MarkPro-Medium.otf") format("opentype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: MarkPro;
+    src: url("../fonts/MarkPro-Book.otf") format("opentype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: MarkPro;
+    src: url("../fonts/MarkPro-Bold.otf") format("opentype");
+    font-weight: 900;
+}
+
+
+$body-normal: "MarkPro", sans-serif;
+//Page vars
+$page-max-width: 1440px;
+$page-padding-sm: 40px; 
+$page-padding-lg: 60px; 
+
+// Colors
+$brand-orange: #f15c29;
+$brand-dark-blue: #10122e;
+$brand-bg: #fbfbff;
+$brand-light-blue: #a7bec2;
+
+//Dots bg variables
+$bg-color: $brand-bg;
+$dot-color: #c9c9cc;
+$dot-size: 3.8px;
+$dot-space: 53px;
