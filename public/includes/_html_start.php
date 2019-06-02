@@ -1,7 +1,7 @@
 <?php
     $protocol = (isset($_SERVER['HTTPS']) ? 'https' : 'http');
 //    $SCRIPT_ROOT = $protocol . '://' . $_SERVER['SERVER_NAME'] . '/';
-    $SCRIPT_ROOT = $protocol . '://' . $_SERVER['SERVER_NAME'] . '/eray/public/';
+    $SCRIPT_ROOT = $protocol . '://' . $_SERVER['SERVER_NAME'] . '/project__eray/public/';
 
 
 ?>
